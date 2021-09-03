@@ -1,0 +1,57 @@
+type Approval @entity {
+  id: ID!
+  owner: Bytes! # address
+  approved: Bytes! # address
+  tokenId: BigInt! # uint256
+}
+
+type ApprovalForAll @entity {
+  id: ID!
+  owner: Bytes! # address
+  operator: Bytes! # address
+  approved: Boolean! # bool
+}
+
+type Born @entity {
+  id: ID!
+  mother: Bytes! # address
+  energy: BigInt! # uint128
+  freakerId: BigInt! # uint128
+  freaker_species: Int! # uint8
+  freaker_stamina: Int! # uint8
+  freaker_fortune: Int! # uint8
+  freaker_agility: Int! # uint8
+  freaker_offense: Int! # uint8
+  freaker_defense: Int! # uint8
+}
+
+type Captured @entity {
+  id: ID!
+  attacker: Bytes! # address
+  defender: Bytes! # address
+  sourceId: BigInt! # uint128
+  targetId: BigInt! # uint128
+}
+
+type Missed @entity {
+  id: ID!
+  attacker: Bytes! # address
+  defender: Bytes! # address
+  sourceId: BigInt! # uint128
+  targetId: BigInt! # uint128
+}
+
+type Thwarted @entity {
+  id: ID!
+  attacker: Bytes! # address
+  defender: Bytes! # address
+  sourceId: BigInt! # uint128
+  targetId: BigInt! # uint128
+}
+
+type Transfer @entity {
+  id: ID!
+  from: Bytes! # address
+  to: Bytes! # address
+  tokenId: BigInt! # uint256
+}
